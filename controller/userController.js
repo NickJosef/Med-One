@@ -34,6 +34,8 @@ exports.login = (req, res, next) => {
             Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
           ),
           httpOnly: true,
+          secure: true,
+          signed: true,
         })
         .json({
           status: "success",
