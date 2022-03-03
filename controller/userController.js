@@ -35,11 +35,16 @@ exports.login = (req, res, next) => {
           ),
           httpOnly: true,
           secure: true,
+<<<<<<< HEAD
           signed: true,
+=======
+        signed: true
+>>>>>>> b0ef722c5dbf3179ba5c7c840efc9371be08c1d2
         })
         .json({
           status: "success",
           data: result,
+       
         });
     }
   });
