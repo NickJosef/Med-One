@@ -33,10 +33,9 @@ exports.login = (req, res, next) => {
           expires: new Date(
             Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
           ),
-          domain: "herokuapp.com",
+          domain: ".herokuapp.com",
           httpOnly: true,
-          secure: true,
-          signed: true,
+          secure: req.secure || req.headers["x-forwarded-proto"] === "https",
           signed: true,
         })
         .json({
