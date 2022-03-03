@@ -4,7 +4,7 @@ const { promisify } = require("util");
 const db = require("../server");
 
 const isAuthenticated = async (req, res, next) => {
-  const { token } = req.cookies;
+  const { token } = req.signedCookies;
 
   if (!token) {
     return next(new ErrorHandler("Please Login to access this resources", 401));
