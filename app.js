@@ -15,7 +15,7 @@ app.use(
   })
 );
 app.use(express.json());
-app.use(cookieParser());
+app.use(cookieParser(process.env.SECRET_KEY));
 
 // Routes
 const deviceRoute = require("./routes/deviceRoute");
